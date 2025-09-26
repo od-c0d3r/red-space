@@ -64,7 +64,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: rails_test
+          POSTGRES_DB: red_space_test
         options: >-
           --health-cmd="pg_isready"
           --health-interval=10s
