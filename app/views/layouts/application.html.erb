@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Red Space" %></title>
+    <title><%= content_for(:title) || "Rails Decoded" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -22,7 +22,18 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="flex flex-col min-h-screen">
+      <header class="bg-red-500">#header</header>
+      <main class="container mx-auto mt-28 px-5 flex-grow">
+        <%= yield %>
+      </main>
+      <footer class="bg-amber-500">
+        <div>
+          © 2025 OmaRRashad. Built with Rails 8 and ❤️ for the Rails community.
+        </div>
+        <div>
+          Privacy Policy  |  Terms of Service  |  Unsubscribe
+        </div>
+      </footer>
   </body>
 </html>
