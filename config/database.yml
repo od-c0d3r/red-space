@@ -56,9 +56,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: red_space_test
-  username: postgres
-  password: postgres
+  database: <%= ENV.fetch("POSTGRES_DB", "red_space_test") %>
+  username: <%= ENV.fetch("POSTGRES_USER", "postgres") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD", "postgres") %>
+  host: <%= ENV.fetch("POSTGRES_HOST", "localhost") %>
+  port: <%= ENV.fetch("POSTGRES_PORT", 5432) %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
